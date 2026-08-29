@@ -1064,7 +1064,7 @@ export default function AdminPage() {
                       style={{ cursor: "pointer" }}
                       title={`${item.title || "Görsel"} - Galeride yönet`}
                     >
-                      <img src={item.img} alt={item.title || "Galeri Görseli"} />
+                      <img src={getImgUrl(item.img)} alt={item.title || "Galeri Görseli"} />
                     </div>
                   ))}
 
