@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "../styles/AdminPage.css"
 import { supabase } from "../lib/supabaseClient"
+import { getImgUrl } from "../utils/imageHelper"
 
 const initialMenuItems = [
   { id: 1, name: "Truffle Arancini", category: "Başlangıçlar", price: 420, status: "Aktif", img: "/food_hero_1.png" },
@@ -309,7 +310,7 @@ export default function AdminMenuPage() {
                     <tr key={item.id}>
                       <td data-label="Ürün">
                         <div className="ad-item-cell">
-                          <img src={item.img} alt={item.name} className="ad-item-thumb" style={{ width: "55px", height: "55px" }} />
+                          <img src={getImgUrl(item.img)} alt={item.name} className="ad-item-thumb" style={{ width: "55px", height: "55px" }} />
                           <div>
                             <strong className="ad-item-name" style={{ fontSize: "1rem" }}>{item.name}</strong>
                             {item.description && (
@@ -440,7 +441,7 @@ export default function AdminMenuPage() {
                   ].map((p) => (
                     <img
                       key={p.url}
-                      src={p.url}
+                      src={getImgUrl(p.url)}
                       alt={p.label}
                       className={`ad-preset-img ${newItem.img === p.url ? "ad-preset-img--active" : ""}`}
                       onClick={() => setNewItem({ ...newItem, img: p.url })}

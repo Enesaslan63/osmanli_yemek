@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "../styles/AdminPage.css"
 import { supabase } from "../lib/supabaseClient"
+import { getImgUrl } from "../utils/imageHelper"
 
 /* ── Initial Mock Data ─────────────────────── */
 const initialMenuItems = [
@@ -1179,7 +1180,7 @@ export default function AdminPage() {
                           >
                             <td data-label="Ürün">
                               <div className="ad-item-cell">
-                                <img src={item.img} alt={item.name} className="ad-item-thumb" />
+                                <img src={getImgUrl(item.img)} alt={item.name} className="ad-item-thumb" />
                                 <div>
                                   <strong className="ad-item-name">{item.name}</strong>
                                   {item.description && (
@@ -1396,7 +1397,7 @@ export default function AdminPage() {
                   {galleryItems.map((g) => (
                     <div key={g.id} className="ad-gallery-card">
                       <div className="ad-gallery-card-img">
-                        <img src={g.img} alt={g.title} />
+                        <img src={getImgUrl(g.img)} alt={g.title} />
                       </div>
                       <div className="ad-gallery-card-body">
                         <strong style={{ fontSize: "0.95rem", color: "#1a1510", marginBottom: "0.25rem" }}>{g.title}</strong>
@@ -1734,7 +1735,7 @@ export default function AdminPage() {
                   ].map((p) => (
                     <img
                       key={p.url}
-                      src={p.url}
+                      src={getImgUrl(p.url)}
                       alt={p.label}
                       className={`ad-preset-img ${newItem.img === p.url ? "ad-preset-img--active" : ""}`}
                       onClick={() => setNewItem({ ...newItem, img: p.url })}
@@ -1748,7 +1749,7 @@ export default function AdminPage() {
               {newItem.img && (
                 <div className="ad-img-preview-box">
                   <span style={{ fontSize: "0.6rem", color: "#8a7e70", fontFamily: "var(--font-ui)" }}>GÖRSEL ÖNİZLEME:</span>
-                  <img src={newItem.img} alt="Önizleme" className="ad-preview-thumb" />
+                  <img src={getImgUrl(newItem.img)} alt="Önizleme" className="ad-preview-thumb" />
                 </div>
               )}
 
@@ -1884,7 +1885,7 @@ export default function AdminPage() {
                   ].map((p) => (
                     <img
                       key={p.url}
-                      src={p.url}
+                      src={getImgUrl(p.url)}
                       alt={p.label}
                       className={`ad-preset-img ${editMenuItem.img === p.url ? "ad-preset-img--active" : ""}`}
                       onClick={() => setEditMenuItem({ ...editMenuItem, img: p.url })}
@@ -1898,7 +1899,7 @@ export default function AdminPage() {
               {editMenuItem.img && (
                 <div className="ad-img-preview-box">
                   <span style={{ fontSize: "0.6rem", color: "#8a7e70", fontFamily: "var(--font-ui)" }}>GÖRSEL ÖNİZLEME:</span>
-                  <img src={editMenuItem.img} alt="Önizleme" className="ad-preview-thumb" />
+                  <img src={getImgUrl(editMenuItem.img)} alt="Önizleme" className="ad-preview-thumb" />
                 </div>
               )}
 
@@ -1993,7 +1994,7 @@ export default function AdminPage() {
                   ].map((p) => (
                     <img
                       key={p.src}
-                      src={p.src}
+                      src={getImgUrl(p.src)}
                       alt={p.name}
                       onClick={() => setNewGalleryItem({ ...newGalleryItem, img: p.src })}
                       style={{
@@ -2014,7 +2015,7 @@ export default function AdminPage() {
                 <div style={{ marginBottom: "1rem", textAlign: "center" }}>
                   <span style={{ fontSize: "0.7rem", color: "#8a7e70" }}>Seçilen Önizleme:</span>
                   <div style={{ width: "100%", height: "120px", marginTop: "0.3rem", borderRadius: "3px", overflow: "hidden" }}>
-                    <img src={newGalleryItem.img} alt="Önizleme" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src={getImgUrl(newGalleryItem.img)} alt="Önizleme" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
                 </div>
               )}
