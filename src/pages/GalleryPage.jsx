@@ -103,15 +103,20 @@ export default function GalleryPage() {
           .select("*")
           .order("id", { ascending: false })
         if (!error && data && data.length > 0) {
-          const mapped = data.map((d) => ({
+          const mapped = data.map((d, idx) => ({
             id: d.id,
-            src: d.img,
-            label: d.title ? d.title.toUpperCase() : "GALERİ",
+            src: d.img || initialGalleryItems[idx % initialGalleryItems.length].src,
+            label: d.title ? d.title.toUpperCase() : (initialGalleryItems[idx % initialGalleryItems.length]?.label || "GALERİ"),
             category: d.category || "tabaklar",
             monochrome: false,
             featured: false,
           }))
-          setItems(mapped)
+          if (mapped.length < initialGalleryItems.length) {
+            const remaining = initialGalleryItems.slice(mapped.length)
+            setItems([...mapped, ...remaining])
+          } else {
+            setItems(mapped)
+          }
         } else {
           setItems(initialGalleryItems)
         }
