@@ -419,17 +419,17 @@ function Hero() {
       <div className="hero-mosaic">
         <div className="mosaic-col mosaic-col--1">
           <div className="mosaic-cell cell-tall">
-            <img src="/food_hero_1.png" alt="Gurme Tabak" />
+            <img src="./food_hero_1.png" alt="Gurme Tabak" />
             <div className="cell-overlay" />
           </div>
           <div className="mosaic-cell cell-short">
-            <img src="/food_beef.png" alt="Dana Fileto" />
+            <img src="./food_beef.png" alt="Dana Fileto" />
             <div className="cell-overlay" />
           </div>
         </div>
         <div className="mosaic-col mosaic-col--center">
           <div className="mosaic-cell cell-top-sm">
-            <img src="/food_dessert.png" alt="Tatlı" />
+            <img src="./food_dessert.png" alt="Tatlı" />
             <div className="cell-overlay" />
           </div>
           <div className="hero-text-box">
@@ -444,17 +444,17 @@ function Hero() {
             <Link to="/hakkimizda" className="hero-btn">HİKÂYEMİZİ KEŞFET</Link>
           </div>
           <div className="mosaic-cell cell-bottom-sm">
-            <img src="/restaurant_interior.png" alt="İç Mekan" />
+            <img src="./restaurant_interior.png" alt="İç Mekan" />
             <div className="cell-overlay" />
           </div>
         </div>
         <div className="mosaic-col mosaic-col--3">
           <div className="mosaic-cell cell-short">
-            <img src="/food_ceviche.png" alt="Ceviche" />
+            <img src="./food_ceviche.png" alt="Ceviche" />
             <div className="cell-overlay" />
           </div>
           <div className="mosaic-cell cell-tall">
-            <img src="/food_hero_2.png" alt="Şef Tabağı" />
+            <img src="./food_hero_2.png" alt="Şef Tabağı" />
             <div className="cell-overlay" />
           </div>
         </div>

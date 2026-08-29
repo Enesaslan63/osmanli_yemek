@@ -23,7 +23,7 @@ const pressArticles = [
     title: "Hijyen, Lezzet ve Kapasitede Sınır Tanımayan Mutfak Teknolojisi",
     excerpt:
       "Osmanlı Hazır Yemek, binlerce kişilik davetlerden kurumsal tabıldot hizmetlerine kadar Şanlıurfa'nın en hijyenik entegre tesislerinde asırlık lezzetleri modern sunumlarla buluşturuyor.",
-    img: "/press_restaurant.png",
+    img: "./press_restaurant.png",
     link: "#",
     featured: true,
   },
@@ -142,7 +142,7 @@ export default function ReferencesPage() {
             {/* Featured large card */}
             <div className="rf-press-card rf-press-card--featured">
               <div className="rf-press-img-wrap">
-                <img src="/press_restaurant.png" alt="Basın Haberi" />
+                <img src="./press_restaurant.png" alt="Basın Haberi" />
                 <div className="rf-press-img-overlay" />
               </div>
               <div className="rf-press-card-body rf-press-card-body--featured">
@@ -183,7 +183,7 @@ export default function ReferencesPage() {
               {/* Lifestyle card (dark) */}
               <div className="rf-press-card rf-press-card--dark">
                 <div className="rf-press-img-wrap rf-press-img-wrap--sm">
-                  <img src="/press_restaurant.png" alt="Güneydoğu Sanayi Gazetesi" />
+                  <img src="./press_restaurant.png" alt="Güneydoğu Sanayi Gazetesi" />
                   <div className="rf-press-img-overlay" />
                 </div>
                 <div className="rf-press-card-body">
@@ -212,7 +212,7 @@ export default function ReferencesPage() {
             {/* Living Magazine -> Lezzet Dergisi */}
             <div className="rf-press-card rf-press-card--dark rf-press-card--cocktail">
               <div className="rf-press-img-wrap rf-press-img-wrap--full">
-                <img src="/restaurant_interior.png" alt="Geleneksel Şanlıurfa Mutfağı" />
+                <img src="./restaurant_interior.png" alt="Geleneksel Şanlıurfa Mutfağı" />
                 <div className="rf-press-img-overlay" />
               </div>
               <div className="rf-press-card-body rf-press-card-body--abs">

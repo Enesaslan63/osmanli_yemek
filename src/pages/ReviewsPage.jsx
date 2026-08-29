@@ -183,7 +183,7 @@ export default function ReviewsPage() {
           </div>
 
           <div className="rv-hero-image-wrap">
-            <img src="/restaurant_interior.png" alt="Osmanlı Yemek Ambiyans" />
+            <img src="./restaurant_interior.png" alt="Osmanlı Yemek Ambiyans" />
             <div className="rv-hero-rating-badge">
               <span className="rv-rating-score">{avgRating}</span>
               <div className="rv-rating-stars">{starIcons}</div>

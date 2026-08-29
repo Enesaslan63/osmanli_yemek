@@ -7,7 +7,7 @@ import Footer from "../components/Footer"
 const initialGalleryItems = [
   {
     id: 1,
-    src: "/restaurant_interior.png",
+    src: "./restaurant_interior.png",
     label: "İÇ MEKAN",
     category: "ic_mekan",
     monochrome: true,
@@ -15,7 +15,7 @@ const initialGalleryItems = [
   },
   {
     id: 2,
-    src: "/food_ceviche.png",
+    src: "./food_ceviche.png",
     label: "ŞEFİN SEÇİMİ",
     category: "tabaklar",
     monochrome: false,
@@ -23,7 +23,7 @@ const initialGalleryItems = [
   },
   {
     id: 3,
-    src: "/press_restaurant.png",
+    src: "./press_restaurant.png",
     label: "MUTFAK",
     category: "mutfak",
     monochrome: true,
@@ -31,7 +31,7 @@ const initialGalleryItems = [
   },
   {
     id: 4,
-    src: "/food_hero_1.png",
+    src: "./food_hero_1.png",
     label: "EL PANNO",
     category: "ambiyans",
     monochrome: false,
@@ -39,7 +39,7 @@ const initialGalleryItems = [
   },
   {
     id: 5,
-    src: "/food_dessert.png",
+    src: "./food_dessert.png",
     label: "ŞEF İMZASI",
     category: "tabaklar",
     monochrome: false,
@@ -47,7 +47,7 @@ const initialGalleryItems = [
   },
   {
     id: 6,
-    src: "/food_beef.png",
+    src: "./food_beef.png",
     label: "ANA TABAK",
     category: "tabaklar",
     monochrome: false,
@@ -55,7 +55,7 @@ const initialGalleryItems = [
   },
   {
     id: 7,
-    src: "/food_hero_2.png",
+    src: "./food_hero_2.png",
     label: "BAŞLANGIÇ",
     category: "tabaklar",
     monochrome: false,
@@ -63,7 +63,7 @@ const initialGalleryItems = [
   },
   {
     id: 8,
-    src: "/food_drinks.png",
+    src: "./food_drinks.png",
     label: "BAR",
     category: "ic_mekan",
     monochrome: false,

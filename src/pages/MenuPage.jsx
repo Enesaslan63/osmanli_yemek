@@ -3,6 +3,12 @@ import "../styles/MenuPage.css"
 import { supabase } from "../lib/supabaseClient"
 import Footer from "../components/Footer"
 
+const getImgUrl = (url) => {
+  if (!url) return "./food_hero_1.png"
+  if (url.startsWith("/")) return "." + url
+  return url
+}
+
 /* ── Menu Data ──────────────────────────────────── */
 const menuData = {
   baslangiclar: {
@@ -610,7 +616,7 @@ export default function MenuPage({ onOpenReservation }) {
                   const featItem = cat.items.find(x => x.name === cat.featured) || cat.items[0]
                   if (featItem) setSelectedItemDetail(featItem)
                 }}>
-                  <img src={cat.items[0]?.img || cat.img} alt={cat.featured} />
+                  <img src={getImgUrl(cat.items[0]?.img || cat.img)} alt={cat.featured} />
                   <div className="mn-featured-overlay">
                     <span className="mn-featured-badge">ÖNE ÇIKAN TABAK</span>
                     <p className="mn-featured-name">{cat.items[0]?.name || cat.featured}</p>
@@ -666,7 +672,7 @@ export default function MenuPage({ onOpenReservation }) {
                       <div key={item.id} className="mn-item">
                         {item.img && (
                           <div className="mn-item-img-container" onClick={() => setSelectedItemDetail(item)}>
-                            <img src={item.img} alt={item.name} className="mn-item-card-img" />
+                            <img src={getImgUrl(item.img)} alt={item.name} className="mn-item-card-img" />
                           </div>
                         )}
                         <div className="mn-item-content">
@@ -722,7 +728,7 @@ export default function MenuPage({ onOpenReservation }) {
             {selectedItemDetail.img && (
               <div style={{ width: "100%", maxHeight: "320px", borderRadius: "8px", overflow: "hidden", marginBottom: "1.2rem", border: "1px solid #e8dec8", background: "#0a0806", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <img
-                  src={selectedItemDetail.img}
+                  src={getImgUrl(selectedItemDetail.img)}
                   alt={selectedItemDetail.name}
                   style={{ width: "100%", maxHeight: "320px", objectFit: "contain", display: "block" }}
                 />

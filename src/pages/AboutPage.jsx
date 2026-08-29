@@ -8,7 +8,7 @@ function AboutHero() {
   return (
     <section className="ab-hero">
       <div className="ab-hero-bg">
-        <img src="/restaurant_hero.png" alt="Osmanlı Hazır Yemek" />
+        <img src="./restaurant_hero.png" alt="Osmanlı Hazır Yemek" />
         <div className="ab-hero-overlay" />
       </div>
       <div className="ab-hero-content">
@@ -26,7 +26,7 @@ function AboutHero() {
         </p>
         <div className="ab-hero-mini">
           <div className="ab-mini-img">
-            <img src="/food_plate.png" alt="Tabak" />
+            <img src="./food_plate.png" alt="Tabak" />
           </div>
           <div className="ab-mini-text">
             <p>Yılların getirdiği estetiği</p>
@@ -54,7 +54,7 @@ function ChefSection() {
         {/* Photo */}
         <div className="ab-chef-photo-col">
           <div className="ab-chef-photo-wrap">
-            <img src="/chef_alexandre.png" alt="Şef Mehmet Usta" />
+            <img src="./chef_alexandre.png" alt="Şef Mehmet Usta" />
             <div className="ab-chef-badge">
               <span className="ab-badge-num">15</span>
               <span className="ab-badge-lbl">YIL DENEYİM</span>
