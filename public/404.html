@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Yönlendiriliyor...</title>
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        var repo = "/osmanli_yemek";
+        var route = path.indexOf(repo) === 0 ? path.slice(repo.length) : path;
+        if (!route || route === "/") route = "";
+        window.location.replace(repo + "/#" + route + search + hash);
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
