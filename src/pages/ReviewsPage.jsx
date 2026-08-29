@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react"
 import "../styles/ReviewsPage.css"
 import { supabase } from "../lib/supabaseClient"
 import Footer from "../components/Footer"
+import { getImgUrl } from "../utils/imageHelper"
 
 /* ── Initial Featured Reviews ───────────────────────── */
 const defaultReviews = [
@@ -183,7 +184,7 @@ export default function ReviewsPage() {
           </div>
 
           <div className="rv-hero-image-wrap">
-            <img src="./restaurant_interior.png" alt="Osmanlı Yemek Ambiyans" />
+            <img src={getImgUrl("restaurant_interior.png")} alt="Osmanlı Yemek Ambiyans" />
             <div className="rv-hero-rating-badge">
               <span className="rv-rating-score">{avgRating}</span>
               <div className="rv-rating-stars">{starIcons}</div>

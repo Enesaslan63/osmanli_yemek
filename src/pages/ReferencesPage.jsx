@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "../styles/ReferencesPage.css"
 import Footer from "../components/Footer"
+import { getImgUrl } from "../utils/imageHelper"
 
 /* ── Kurumsal İş Ortakları (Şanlıurfa ve Bölgesel Partnerler) ─── */
 const partners = [
@@ -142,7 +143,7 @@ export default function ReferencesPage() {
             {/* Featured large card */}
             <div className="rf-press-card rf-press-card--featured">
               <div className="rf-press-img-wrap">
-                <img src="./press_restaurant.png" alt="Basın Haberi" />
+                <img src={getImgUrl("press_restaurant.png")} alt="Basın Haberi" />
                 <div className="rf-press-img-overlay" />
               </div>
               <div className="rf-press-card-body rf-press-card-body--featured">
@@ -183,7 +184,7 @@ export default function ReferencesPage() {
               {/* Lifestyle card (dark) */}
               <div className="rf-press-card rf-press-card--dark">
                 <div className="rf-press-img-wrap rf-press-img-wrap--sm">
-                  <img src="./press_restaurant.png" alt="Güneydoğu Sanayi Gazetesi" />
+                  <img src={getImgUrl("press_restaurant.png")} alt="Güneydoğu Sanayi Gazetesi" />
                   <div className="rf-press-img-overlay" />
                 </div>
                 <div className="rf-press-card-body">
@@ -212,7 +213,7 @@ export default function ReferencesPage() {
             {/* Living Magazine -> Lezzet Dergisi */}
             <div className="rf-press-card rf-press-card--dark rf-press-card--cocktail">
               <div className="rf-press-img-wrap rf-press-img-wrap--full">
-                <img src="./restaurant_interior.png" alt="Geleneksel Şanlıurfa Mutfağı" />
+                <img src={getImgUrl("restaurant_interior.png")} alt="Geleneksel Şanlıurfa Mutfağı" />
                 <div className="rf-press-img-overlay" />
               </div>
               <div className="rf-press-card-body rf-press-card-body--abs">

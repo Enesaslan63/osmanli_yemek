@@ -2,12 +2,13 @@ import { useState, useEffect } from "react"
 import "../styles/GalleryPage.css"
 import { supabase } from "../lib/supabaseClient"
 import Footer from "../components/Footer"
+import { getImgUrl } from "../utils/imageHelper"
 
 /* ── Gallery Items ──────────────────────── */
 const initialGalleryItems = [
   {
     id: 1,
-    src: "./restaurant_interior.png",
+    src: "restaurant_interior.png",
     label: "İÇ MEKAN",
     category: "ic_mekan",
     monochrome: true,
@@ -15,7 +16,7 @@ const initialGalleryItems = [
   },
   {
     id: 2,
-    src: "./food_ceviche.png",
+    src: "food_ceviche.png",
     label: "ŞEFİN SEÇİMİ",
     category: "tabaklar",
     monochrome: false,
@@ -23,7 +24,7 @@ const initialGalleryItems = [
   },
   {
     id: 3,
-    src: "./press_restaurant.png",
+    src: "press_restaurant.png",
     label: "MUTFAK",
     category: "mutfak",
     monochrome: true,
@@ -31,7 +32,7 @@ const initialGalleryItems = [
   },
   {
     id: 4,
-    src: "./food_hero_1.png",
+    src: "food_hero_1.png",
     label: "EL PANNO",
     category: "ambiyans",
     monochrome: false,
@@ -39,7 +40,7 @@ const initialGalleryItems = [
   },
   {
     id: 5,
-    src: "./food_dessert.png",
+    src: "food_dessert.png",
     label: "ŞEF İMZASI",
     category: "tabaklar",
     monochrome: false,
@@ -47,7 +48,7 @@ const initialGalleryItems = [
   },
   {
     id: 6,
-    src: "./food_beef.png",
+    src: "food_beef.png",
     label: "ANA TABAK",
     category: "tabaklar",
     monochrome: false,
@@ -55,7 +56,7 @@ const initialGalleryItems = [
   },
   {
     id: 7,
-    src: "./food_hero_2.png",
+    src: "food_hero_2.png",
     label: "BAŞLANGIÇ",
     category: "tabaklar",
     monochrome: false,
@@ -63,7 +64,7 @@ const initialGalleryItems = [
   },
   {
     id: 8,
-    src: "./food_drinks.png",
+    src: "food_drinks.png",
     label: "BAR",
     category: "ic_mekan",
     monochrome: false,
@@ -79,7 +80,7 @@ function Lightbox({ item, onClose, onPrev, onNext }) {
       <button className="gl-lb-close" onClick={onClose} aria-label="Kapat">✕</button>
       <button className="gl-lb-prev" onClick={(e) => { e.stopPropagation(); onPrev() }} aria-label="Önceki">‹</button>
       <div className="gl-lb-img-wrap" onClick={(e) => e.stopPropagation()}>
-        <img src={item.src} alt={item.label} />
+        <img src={getImgUrl(item.src)} alt={item.label} />
         <div className="gl-lb-label">{item.label}</div>
       </div>
       <button className="gl-lb-next" onClick={(e) => { e.stopPropagation(); onNext() }} aria-label="Sonraki">›</button>
@@ -91,7 +92,7 @@ function Lightbox({ item, onClose, onPrev, onNext }) {
    PAGE
 ═══════════════════════════════════════════ */
 export default function GalleryPage() {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(initialGalleryItems)
   const [lightboxIdx, setLightboxIdx] = useState(null)
 
   useEffect(() => {
@@ -101,7 +102,7 @@ export default function GalleryPage() {
           .from("gallery_items")
           .select("*")
           .order("id", { ascending: false })
-        if (!error && data) {
+        if (!error && data && data.length > 0) {
           const mapped = data.map((d) => ({
             id: d.id,
             src: d.img,
@@ -112,11 +113,11 @@ export default function GalleryPage() {
           }))
           setItems(mapped)
         } else {
-          setItems([])
+          setItems(initialGalleryItems)
         }
       } catch (err) {
         console.log("Fetch gallery error:", err)
-        setItems([])
+        setItems(initialGalleryItems)
       }
     }
     fetchGallery()
@@ -152,7 +153,7 @@ export default function GalleryPage() {
               onClick={() => openLightbox(0)}
             >
               <div className="gl-item-img-wrap">
-                <img src={items[0].src} alt={items[0].label} />
+                <img src={getImgUrl(items[0].src)} alt={items[0].label} />
               </div>
               <div className="gl-item-overlay">
                 <span className="gl-item-label">{items[0].label}</span>
@@ -167,7 +168,7 @@ export default function GalleryPage() {
               onClick={() => openLightbox(1)}
             >
               <div className="gl-item-img-wrap">
-                <img src={items[1].src} alt={items[1].label} />
+                <img src={getImgUrl(items[1].src)} alt={items[1].label} />
               </div>
               <div className="gl-item-badge">{items[1].label}</div>
             </div>
@@ -188,7 +189,7 @@ export default function GalleryPage() {
               onClick={() => openLightbox(2)}
             >
               <div className="gl-item-img-wrap">
-                <img src={items[2].src} alt={items[2].label} />
+                <img src={getImgUrl(items[2].src)} alt={items[2].label} />
               </div>
               <div className="gl-item-overlay">
                 <span className="gl-item-label">{items[2].label}</span>
@@ -203,7 +204,7 @@ export default function GalleryPage() {
               onClick={() => openLightbox(3)}
             >
               <div className="gl-item-img-wrap">
-                <img src={items[3].src} alt={items[3].label} />
+                <img src={getImgUrl(items[3].src)} alt={items[3].label} />
               </div>
               <div className="gl-item-badge gl-item-badge--top-right">{items[3].label}</div>
             </div>
@@ -218,7 +219,7 @@ export default function GalleryPage() {
               onClick={() => openLightbox(4)}
             >
               <div className="gl-item-img-wrap">
-                <img src={items[4].src} alt={items[4].label} />
+                <img src={getImgUrl(items[4].src)} alt={items[4].label} />
               </div>
               <div className="gl-item-badge gl-item-badge--bottom">{items[4].label}</div>
             </div>
@@ -236,7 +237,7 @@ export default function GalleryPage() {
                 onClick={() => openLightbox(actualIdx)}
               >
                 <div className="gl-item-img-wrap">
-                  <img src={item.src} alt={item.label} />
+                  <img src={getImgUrl(item.src)} alt={item.label} />
                 </div>
                 <div className="gl-item-overlay">
                   <span className="gl-item-label">{item.label}</span>
