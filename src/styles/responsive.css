@@ -1,0 +1,49 @@
+/* ════════════════════════════════════════════════
+   responsive.css – Global mobil uyumluluk
+════════════════════════════════════════════════ */
+
+/* Güvenli alan (çentikli ekranlar) */
+@supports (padding: max(0px)) {
+  .navbar .nav-inner,
+  .mn-footer,
+  .ad-container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Medya taşmasını önle */
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+/* Dokunmatik kaydırma */
+.mn-tab-buttons,
+.ad-nav--mobile {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Rezervasyon modal – 2 sütunlu satır */
+.ad-modal-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .ad-modal-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-modal-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .ad-modal-title {
+    font-size: 1.45rem;
+    padding-right: 1.5rem;
+  }
+}

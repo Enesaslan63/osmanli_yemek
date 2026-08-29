@@ -1,0 +1,222 @@
+/* ── Unified Luxury Footer ── */
+.mn-footer {
+  background: #080604;
+  padding: 4rem 2rem 2.5rem;
+  border-top: 1px solid #1a1510;
+  color: #c4b8a5;
+  width: 100%;
+}
+
+.mn-footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.mn-footer-logo {
+  font-family: var(--font-body, "Cormorant Garamond", serif);
+  font-size: 1.55rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.mn-footer-tagline {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: #b5a692;
+  margin-bottom: 1.5rem;
+  max-width: 420px;
+}
+
+.mn-footer-socials {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.mn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid #3d3225;
+  color: #b5a692;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.mn-social:hover {
+  border-color: #e2c478;
+  color: #e2c478;
+}
+
+.mn-social svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.mn-footer-col-title {
+  font-family: var(--font-ui, "Montserrat", sans-serif);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  color: #e2c478;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.mn-footer-addr {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: #b5a692;
+}
+
+/* Oval Map Button */
+.mn-footer-map-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mn-footer-map-oval {
+  position: relative;
+  width: 280px;
+  height: 110px;
+  border-radius: 55px;
+  border: 1px solid #e2c478;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mn-footer-map-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+
+.mn-footer-map-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.mn-footer-map-oval:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(226, 196, 120, 0.35);
+}
+
+.mn-map-pin-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(10, 8, 5, 0.9);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 1.1rem;
+  border-radius: 30px;
+  border: 1px solid #e2c478;
+  color: #e2c478;
+  font-family: var(--font-ui, "Montserrat", sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transition: all 0.3s ease;
+}
+
+.mn-footer-map-oval:hover .mn-map-pin-badge {
+  background: #e2c478;
+  color: #0a0805;
+  border-color: #ffffff;
+}
+
+.mn-footer-bottom {
+  text-align: center;
+  font-family: var(--font-ui, "Montserrat", sans-serif);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: #8c7e6c;
+  border-top: 1px solid #1a1510;
+  padding-top: 1.8rem;
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 1024px) {
+  .mn-footer-inner {
+    gap: 2.5rem;
+  }
+
+  .mn-footer-map-col {
+    flex: 1 1 100%;
+    align-items: center;
+  }
+
+  .mn-footer-map-oval {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mn-footer {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .mn-footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .mn-footer-brand,
+  .mn-footer-col {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mn-footer-tagline {
+    max-width: 100%;
+  }
+
+  .mn-footer-socials {
+    justify-content: center;
+  }
+
+  .mn-footer-map-oval {
+    max-width: 100%;
+    height: 100px;
+    border-radius: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mn-footer-logo {
+    font-size: 1.3rem;
+  }
+
+  .mn-footer-map-oval {
+    height: 90px;
+  }
+}

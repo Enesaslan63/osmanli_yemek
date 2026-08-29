@@ -1,0 +1,882 @@
+/* ════════════════════════════════════════════════
+   ReferencesPage.css – Osmanlı Yemek Referanslar
+   Açık / Krem Editoryal Premium Tema
+════════════════════════════════════════════════ */
+
+.rf-page {
+  background: #faf7f2;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: #1a1510;
+  overflow-x: hidden;
+}
+
+/* ── Hero ────────────────────────────────── */
+.rf-hero {
+  padding: 10rem 2rem 5rem;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.rf-hero-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: #8b6e3e;
+  margin-bottom: 1.4rem;
+}
+
+.rf-hero-title {
+  font-family: var(--font-body);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 400;
+  color: #1a1510;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.rf-hero-desc {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #6b6055;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+.rf-hero-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rf-ornament-line {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9a96e, transparent);
+}
+
+.rf-hero-ornament svg {
+  color: #8b6e3e;
+  opacity: 0.8;
+}
+
+/* ── Partners Section ────────────────────── */
+.rf-partners {
+  background: #ffffff;
+  padding: 5rem 2rem 5rem;
+  border-top: 1px solid #e8e0d4;
+  border-bottom: 1px solid #e8e0d4;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.rf-partners-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.rf-section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.rf-section-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8cfc4;
+  color: #8b6e3e;
+  flex-shrink: 0;
+}
+
+.rf-section-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.rf-section-title {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #1a1510;
+  flex: 1;
+}
+
+.rf-section-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.rf-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d8cfc4;
+}
+
+.rf-dot--active {
+  background: #8b6e3e;
+}
+
+.rf-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid #e5ddd0;
+}
+
+.rf-partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 2.5rem 1rem;
+  border-right: 1px solid #e5ddd0;
+  border-bottom: 1px solid #e5ddd0;
+  transition: background 0.3s, transform 0.3s;
+  cursor: default;
+  background: #faf7f2;
+}
+
+.rf-partner-card:nth-child(4n) { border-right: none; }
+.rf-partner-card:nth-child(n+5) { border-bottom: none; }
+
+.rf-partner-card--hover,
+.rf-partner-card:hover {
+  background: #ffffff;
+  box-shadow: inset 0 0 20px rgba(201,169,110,0.08);
+}
+
+.rf-partner-logo-wrap {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8cfc4;
+  border-radius: 2px;
+  background: #ffffff;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.rf-partner-card:hover .rf-partner-logo-wrap {
+  border-color: #8b6e3e;
+  transform: translateY(-2px);
+}
+
+.rf-partner-icon {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #1a1510;
+  transition: color 0.3s;
+}
+
+.rf-partner-card:hover .rf-partner-icon {
+  color: #8b6e3e;
+}
+
+.rf-partner-name {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: #7a7060;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.rf-partner-card:hover .rf-partner-name {
+  color: #1a1510;
+}
+
+/* ── Awards Strip ────────────────────────── */
+.rf-awards {
+  background: #0a0805;
+  color: #f5f0e8;
+  padding: 2.5rem 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(201,169,110,0.15);
+}
+
+.rf-awards-inner {
+  max-width: 100%;
+}
+
+.rf-awards-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.rf-awards-track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: awardsScroll 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes awardsScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.rf-award-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 2.5rem;
+}
+
+.rf-award-year {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.rf-award-sep {
+  color: #6a6258;
+  font-size: 0.8rem;
+}
+
+.rf-award-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #f5f0e8;
+}
+
+.rf-award-org {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: #a09588;
+}
+
+.rf-award-gem {
+  color: rgba(201,169,110,0.4);
+  font-size: 0.7rem;
+  margin-left: 1rem;
+}
+
+/* ── Press Section ───────────────────────── */
+.rf-press {
+  padding: 6rem 2rem;
+}
+
+.rf-press-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.rf-press-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.rf-press-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: #8b6e3e;
+  margin-bottom: 0.8rem;
+}
+
+.rf-press-title {
+  font-family: var(--font-body);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: #1a1510;
+  margin-bottom: 1.5rem;
+}
+
+.rf-title-line {
+  width: 40px;
+  height: 1px;
+  background: #8b6e3e;
+  margin: 0 auto;
+}
+
+/* Bento Grid */
+.rf-press-bento {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.rf-press-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  border: 1px solid #e8e0d4;
+}
+
+.rf-press-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.rf-press-card--featured {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.rf-press-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.rf-press-card--featured .rf-press-img-wrap {
+  height: 210px;
+}
+
+.rf-press-img-wrap--sm {
+  height: 130px;
+}
+
+.rf-press-img-wrap--full {
+  height: 150px;
+}
+
+.rf-press-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.rf-press-card:hover .rf-press-img-wrap img {
+  transform: scale(1.05);
+}
+
+.rf-press-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,8,5,0.4) 0%, transparent 100%);
+}
+
+.rf-press-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  background: #0a0805;
+  color: var(--gold);
+  padding: 0.3rem 0.8rem;
+}
+
+.rf-press-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.rf-press-source {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: #8b6e3e;
+  margin-bottom: 0.8rem;
+}
+
+.rf-press-source--gold {
+  color: #8b6e3e;
+}
+
+.rf-press-card-title {
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: #1a1510;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.rf-press-card-title--sm {
+  font-size: 1.15rem;
+}
+
+.rf-press-card-excerpt {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #6b6055;
+  margin-bottom: 1.5rem;
+}
+
+.rf-press-card-excerpt--sm {
+  font-size: 0.82rem;
+}
+
+.rf-press-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e8e0d4;
+}
+
+.rf-press-date {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  color: #9a8870;
+}
+
+.rf-press-read-more {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: #1a1510;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s;
+}
+
+.rf-press-read-more:hover {
+  color: #8b6e3e;
+}
+
+/* Col 2 Top: Michelin Card */
+.rf-press-card--michelin {
+  background: #f6eedf;
+  border: 1px solid #d8c2a0;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  padding: 2rem;
+}
+
+.rf-michelin-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+}
+
+.rf-michelin-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.rf-michelin-label {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: #1a1510;
+}
+
+.rf-michelin-subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  color: #8b6e3e;
+  margin-top: 0.2rem;
+}
+
+.rf-michelin-years {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: #1a1510;
+  font-weight: 700;
+}
+
+.rf-michelin-star {
+  color: #8b6e3e;
+  font-size: 1.2rem;
+}
+
+/* Col 2 Bottom & Col 3 Top Dark Cards */
+.rf-press-card--dark {
+  background: #ffffff;
+  border: 1px solid #e8e0d4;
+  color: #1a1510;
+}
+
+.rf-press-card--quote {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 2.2rem;
+  background: #0a0805;
+  color: #f5f0e8;
+  border: none;
+}
+
+.rf-quote-mark {
+  font-family: var(--font-body);
+  font-size: 4rem;
+  line-height: 0.5;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.rf-quote-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: #e5ded5;
+  margin-bottom: 1.5rem;
+}
+
+.rf-quote-name {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.rf-quote-role {
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  color: #8a7e70;
+}
+
+.rf-press-card--cocktail {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+/* Media Logos Bar */
+.rf-media-logos {
+  border-top: 1px solid #e8e0d4;
+  padding: 4rem 2rem 4.5rem;
+  text-align: center;
+}
+
+.rf-media-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  color: #8b6e3e;
+  margin-bottom: 2.2rem;
+}
+
+.rf-media-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+.rf-media-name {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: #7a7060;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+
+.rf-media-name:hover {
+  color: #1a1510;
+}
+
+/* ── CTA Banner ──────────────────────────── */
+.rf-cta {
+  background: #0a0805;
+  color: #f5f0e8;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.rf-cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.rf-cta-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.rf-cta-title {
+  font-family: var(--font-body);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: #f5f0e8;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.rf-cta-desc {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: #8a7e70;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+}
+
+.rf-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.rf-cta-btn {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  padding: 1.1rem 2.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.rf-cta-btn--gold {
+  background: #c9a96e;
+  color: #0a0805;
+}
+
+.rf-cta-btn--gold:hover {
+  background: #e2c99a;
+}
+
+.rf-cta-btn--outline {
+  border: 1px solid rgba(201,169,110,0.3);
+  color: #f5f0e8;
+}
+
+.rf-cta-btn--outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Footer ──────────────────────────────── */
+.rf-footer {
+  background: #0a0805;
+  padding: 5rem 2rem 2rem;
+  color: #f5f0e8;
+  border-top: 1px solid rgba(201,169,110,0.12);
+}
+
+.rf-footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201,169,110,0.12);
+}
+
+.rf-footer-logo {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #f5f0e8;
+  margin-bottom: 1rem;
+}
+
+.rf-footer-tagline {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: #6a6258;
+  margin-bottom: 1.5rem;
+  max-width: 260px;
+}
+
+.rf-footer-socials { display: flex; gap: 0.8rem; }
+
+.rf-social {
+  width: 32px; height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201,169,110,0.2);
+  color: #6a6258;
+  transition: border-color 0.3s, color 0.3s;
+  border-radius: 2px;
+}
+
+.rf-social svg { width: 13px; height: 13px; }
+.rf-social:hover { border-color: var(--gold); color: var(--gold); }
+
+.rf-footer-col-title {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.rf-footer-addr {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: #6a6258;
+}
+
+.rf-footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.rf-footer-list a {
+  font-size: 0.88rem;
+  color: #6a6258;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.rf-footer-list a:hover { color: #f5f0e8; }
+
+.rf-footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: #4a4540;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .rf-partner-grid { grid-template-columns: repeat(2, 1fr); }
+  .rf-partner-card:nth-child(4n) { border-right: 1px solid #e5ddd0; }
+  .rf-partner-card:nth-child(n+5) { border-bottom: 1px solid #e5ddd0; }
+  .rf-partner-card:nth-child(2n) { border-right: none; }
+  .rf-partner-card:nth-child(2n-1) { border-right: 1px solid #e5ddd0; }
+  .rf-partner-card:nth-last-child(-n+2) { border-bottom: none; }
+  .rf-press-bento { grid-template-columns: 1fr; }
+  .rf-press-card--featured, .rf-press-card--michelin, .rf-press-card--quote, .rf-press-card--cocktail {
+    grid-column: auto; grid-row: auto;
+  }
+  .rf-footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .rf-hero {
+    padding: 7rem 1.25rem 3.5rem;
+  }
+
+  .rf-partners {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .rf-section-header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .rf-section-dots {
+    display: none;
+  }
+
+  .rf-partner-card:nth-child(2n) { border-right: none; }
+  .rf-partner-card:nth-child(2n-1) { border-right: 1px solid #e5ddd0; }
+  .rf-partner-card:nth-last-child(-n+2) { border-bottom: none; }
+
+  .rf-press {
+    padding: 4rem 1.25rem;
+  }
+
+  .rf-press-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .rf-press-bento {
+    margin-bottom: 3rem;
+  }
+
+  .rf-press-card-body {
+    padding: 1.5rem;
+  }
+
+  .rf-media-logos {
+    padding: 3rem 1.25rem;
+  }
+
+  .rf-media-grid {
+    gap: 1.5rem 2rem;
+  }
+
+  .rf-media-name {
+    font-size: 1rem;
+  }
+
+  .rf-cta {
+    padding: 4rem 1.25rem;
+  }
+
+  .rf-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .rf-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .rf-partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rf-partner-card {
+    padding: 1.75rem 0.75rem;
+  }
+
+  .rf-partner-logo-wrap {
+    width: 48px;
+    height: 48px;
+  }
+
+  .rf-partner-icon {
+    font-size: 0.58rem;
+  }
+
+  .rf-partner-name {
+    font-size: 0.55rem;
+  }
+
+  .rf-footer-inner { grid-template-columns: 1fr; }
+
+  .rf-hero-title {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .rf-award-item {
+    padding: 0 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rf-press-card-title {
+    font-size: 1.25rem;
+  }
+
+  .rf-cta-title {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+  }
+}

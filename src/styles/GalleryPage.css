@@ -1,0 +1,584 @@
+/* ════════════════════════════════════════════════
+   GalleryPage.css – Osmanlı Yemek Galeri
+   Açık / Krem editoryal tema
+════════════════════════════════════════════════ */
+
+.gl-page {
+  background: #faf7f2;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: #1a1510;
+  overflow-x: hidden;
+}
+
+/* ── Hero ────────────────────────────────── */
+.gl-hero {
+  padding: 10rem 2rem 4rem;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.gl-hero-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: #9a8870;
+  margin-bottom: 1.2rem;
+}
+
+.gl-hero-title {
+  font-family: var(--font-body);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  color: #1a1510;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.gl-hero-desc {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #6b6055;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ── Editorial Layout ────────────────────── */
+.gl-editorial {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.gl-row {
+  position: relative;
+  width: 100%;
+}
+
+/* Common Item styles */
+.gl-item {
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gl-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.gl-item-img-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gl-item-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease, filter 0.5s ease;
+}
+
+.gl-item--bw img {
+  filter: grayscale(100%) contrast(105%);
+}
+
+.gl-item:hover img {
+  transform: scale(1.05);
+}
+
+.gl-item--bw:hover img {
+  filter: grayscale(0%) contrast(100%);
+}
+
+/* Overlays & Badges */
+.gl-item-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.2rem;
+  background: linear-gradient(to top, rgba(10,8,5,0.7) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gl-item:hover .gl-item-overlay {
+  opacity: 1;
+}
+
+.gl-item-label {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: #f5f0e8;
+}
+
+.gl-item-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: #0f0d08;
+  color: #f5f0e8;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  padding: 0.65rem 1.3rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.gl-item-badge--top-right {
+  top: 1rem;
+  bottom: auto;
+  right: 1rem;
+}
+
+.gl-item-badge--bottom {
+  bottom: 1rem;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+/* Row 1 Layout */
+.gl-row--1 {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  min-height: 480px;
+}
+
+.gl-item--large-left {
+  width: 62%;
+  height: 440px;
+}
+
+.gl-item--overlap-right {
+  width: 48%;
+  height: 340px;
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  z-index: 2;
+  border: 8px solid #faf7f2;
+}
+
+/* Row 2 Layout (MUTFAK) */
+.gl-row--2 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 3rem;
+  min-height: 450px;
+}
+
+.gl-category-tag {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: #1a1510;
+  position: absolute;
+  left: -2.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gl-item--chef {
+  width: 55%;
+  height: 460px;
+  margin-left: 2rem;
+}
+
+.gl-item--table {
+  width: 45%;
+  height: 320px;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border: 8px solid #faf7f2;
+}
+
+.gl-item--table:hover {
+  transform: translateY(calc(-50% - 4px));
+}
+
+/* Row 3 Layout (Featured Dessert) */
+.gl-row--3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.gl-item--center-featured {
+  width: 80%;
+  height: 420px;
+}
+
+/* Row 4 Layout (Grid) */
+.gl-row--4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+}
+
+.gl-item--grid {
+  height: 260px;
+}
+
+/* ── Lightbox ────────────────────────────── */
+.gl-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(10,8,5,0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gl-lb-close, .gl-lb-prev, .gl-lb-next {
+  background: none;
+  border: none;
+  color: #f5f0e8;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1010;
+  transition: color 0.3s;
+}
+
+.gl-lb-close:hover, .gl-lb-prev:hover, .gl-lb-next:hover {
+  color: var(--gold);
+}
+
+.gl-lb-close { top: 2rem; right: 2rem; }
+.gl-lb-prev { left: 2rem; font-size: 3rem; }
+.gl-lb-next { right: 2rem; font-size: 3rem; }
+
+.gl-lb-img-wrap {
+  max-width: 85vw;
+  max-height: 80vh;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.gl-lb-img-wrap img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.gl-lb-label {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+}
+
+/* ── Footer ──────────────────────────────── */
+.gl-footer {
+  background: #0f0d08;
+  padding: 5rem 2rem 2rem;
+  color: #f5f0e8;
+}
+
+.gl-footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201,169,110,0.12);
+}
+
+.gl-footer-logo {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #f5f0e8;
+  margin-bottom: 1rem;
+}
+
+.gl-footer-tagline {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: #6a6258;
+  margin-bottom: 1.5rem;
+  max-width: 260px;
+}
+
+.gl-footer-socials { display: flex; gap: 0.8rem; }
+
+.gl-social {
+  width: 32px; height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201,169,110,0.2);
+  color: #6a6258;
+  transition: border-color 0.3s, color 0.3s;
+  border-radius: 2px;
+}
+
+.gl-social svg { width: 13px; height: 13px; }
+.gl-social:hover { border-color: var(--gold); color: var(--gold); }
+
+.gl-footer-col-title {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.gl-footer-addr {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: #6a6258;
+}
+
+.gl-footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.gl-footer-list a {
+  font-size: 0.88rem;
+  color: #6a6258;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.gl-footer-list a:hover { color: #f5f0e8; }
+
+.gl-footer-nl-text {
+  font-size: 0.85rem;
+  color: #6a6258;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.gl-footer-nl {
+  display: flex;
+  border: 1px solid rgba(201,169,110,0.18);
+}
+
+.gl-footer-nl input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #f5f0e8;
+}
+
+.gl-footer-nl input::placeholder { color: #5a5248; }
+
+.gl-footer-nl button {
+  background: var(--gold);
+  border: none;
+  color: #0a0805;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+
+.gl-footer-nl button:hover { background: #e2c99a; }
+
+.gl-footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: #4a4540;
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 900px) {
+  .gl-hero {
+    padding: 7rem 1.25rem 2.5rem;
+  }
+
+  .gl-editorial {
+    padding: 1.25rem 1rem 4rem;
+    gap: 1.5rem;
+  }
+
+  .gl-row--1,
+  .gl-row--2,
+  .gl-row--3 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    margin-top: 0;
+    gap: 1.25rem;
+  }
+
+  .gl-item--large-left,
+  .gl-item--overlap-right,
+  .gl-item--chef,
+  .gl-item--table,
+  .gl-item--center-featured,
+  .gl-item--grid {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+    position: relative;
+    transform: none;
+    border: none;
+    margin: 0;
+  }
+
+  .gl-item-img-wrap {
+    position: absolute;
+    inset: 0;
+  }
+
+  .gl-item--table:hover,
+  .gl-item:hover {
+    transform: none;
+  }
+
+  .gl-category-tag {
+    display: none;
+  }
+
+  .gl-item-overlay {
+    opacity: 1;
+    padding: 1rem;
+  }
+
+  .gl-item-badge {
+    bottom: 1rem;
+    right: 1rem;
+    left: auto;
+    top: auto;
+    transform: none;
+    padding: 0.55rem 1rem;
+    font-size: 0.52rem;
+  }
+
+  .gl-item-badge--top-right {
+    top: 1rem;
+    right: 1rem;
+    bottom: auto;
+  }
+
+  .gl-item-badge--bottom {
+    bottom: 1rem;
+    left: 1rem;
+    right: auto;
+    transform: none;
+  }
+
+  .gl-row--4 {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .gl-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .gl-item--large-left,
+  .gl-item--overlap-right,
+  .gl-item--chef,
+  .gl-item--table,
+  .gl-item--center-featured,
+  .gl-item--grid {
+    aspect-ratio: 3 / 2;
+  }
+
+  .gl-lb-close { top: 1rem; right: 1rem; }
+  .gl-lb-prev { left: 0.5rem; font-size: 2rem; }
+  .gl-lb-next { right: 0.5rem; font-size: 2rem; }
+
+  .gl-lb-img-wrap {
+    max-width: 95vw;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .gl-footer-inner { grid-template-columns: 1fr; }
+
+  .gl-hero {
+    padding: 6.5rem 1rem 2rem;
+  }
+
+  .gl-editorial {
+    padding: 1rem 0.85rem 3.5rem;
+    gap: 1.25rem;
+  }
+
+  .gl-row--1,
+  .gl-row--2,
+  .gl-row--3 {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gl-hero-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .gl-item--large-left,
+  .gl-item--overlap-right,
+  .gl-item--chef,
+  .gl-item--table,
+  .gl-item--center-featured,
+  .gl-item--grid {
+    aspect-ratio: 1 / 1;
+  }
+
+  .gl-lightbox {
+    padding: 1rem;
+  }
+
+  .gl-lb-label {
+    font-size: 0.62rem;
+    bottom: -2rem;
+  }
+}

@@ -1,0 +1,422 @@
+/* ════════════════════════════════════════════════
+   AboutPage.css  –  Osmanlı Yemek Hakkımızda
+   Zarif, Lüks, Editoryal Tasarım
+════════════════════════════════════════════════ */
+
+/* ── Hero ────────────────────────────────── */
+.ab-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5rem;
+}
+
+.ab-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.ab-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ab-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10,8,5,0.92) 0%,
+    rgba(10,8,5,0.75) 45%,
+    rgba(10,8,5,0.3) 100%
+  );
+}
+
+.ab-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  padding-top: 10rem;
+}
+
+.ab-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.ab-hero-title {
+  font-family: var(--font-body);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.8rem;
+  max-width: 520px;
+}
+
+.ab-hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.ab-hero-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 380px;
+  margin-bottom: 2.5rem;
+}
+
+.ab-hero-mini {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 320px;
+}
+
+.ab-mini-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--gold-dk);
+  flex-shrink: 0;
+}
+
+.ab-mini-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ab-mini-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── Chef ────────────────────────────────── */
+.ab-chef {
+  background: var(--cream);
+  padding: 6rem 0 5rem 0;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.ab-chef-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 560px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.ab-chef-inner--vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Chef Photo */
+.ab-chef-photo-col {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+}
+
+.ab-chef-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ab-chef-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+.ab-chef-badge {
+  position: absolute;
+  bottom: 2rem;
+  right: -1px;
+  background: var(--black);
+  padding: 1.2rem 1.8rem;
+  text-align: center;
+}
+
+.ab-badge-num {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 2.5rem;
+  color: var(--gold);
+  font-style: italic;
+  line-height: 1;
+}
+
+.ab-badge-lbl {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* Chef Info */
+.ab-chef-info {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f5f0e8;
+}
+
+.ab-chef-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-dk);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ab-eyebrow-line {
+  letter-spacing: 0.05em;
+  color: #c5baa8;
+}
+
+.ab-chef-name {
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.ab-chef-name em {
+  font-style: italic;
+  color: #6b5a3e;
+}
+
+.ab-chef-quote {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: #5a5040;
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold-dk);
+}
+
+.ab-chef-bio {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #7a7060;
+  margin-bottom: 2rem;
+}
+
+.ab-chef-sig {
+  width: 120px;
+}
+
+.ab-chef-sig svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ── Vision & Values ─────────────────────── */
+.ab-vv {
+  background: #f8f4ee;
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(139,110,62,0.15);
+}
+
+.ab-vv-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.ab-vv-sep {
+  background: rgba(139,110,62,0.2);
+  align-self: stretch;
+}
+
+.ab-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.ab-section-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--black);
+}
+
+.ab-head-icon {
+  flex-shrink: 0;
+}
+
+.ab-vision-desc {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #6b6258;
+  margin-bottom: 1.8rem;
+}
+
+.ab-vision-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.ab-vision-list li {
+  font-size: 0.88rem;
+  color: #6b6258;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.ab-v-bullet {
+  color: var(--gold-dk);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.ab-values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 2.5rem;
+}
+
+
+.ab-value-icon {
+  font-size: 1rem;
+  color: var(--gold-dk);
+  margin-bottom: 0.4rem;
+}
+
+.ab-value-title {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: #3a3028;
+  margin-bottom: 0.5rem;
+}
+
+.ab-value-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #6b6258;
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 1024px) {
+  .ab-chef-inner { grid-template-columns: 1fr; }
+  .ab-chef-photo-col { min-height: 420px; }
+  .ab-chef-info { padding: 3rem 2rem; }
+  .ab-vv-inner { grid-template-columns: 1fr; }
+  .ab-vv-sep { display: none; }
+}
+
+@media (max-width: 768px) {
+  .ab-hero-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+  .ab-values-grid { grid-template-columns: 1fr; }
+  .ab-chef-photo-col { min-height: 320px; }
+
+  .ab-hero {
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .ab-hero-content {
+    padding: 7rem 1.25rem 0;
+  }
+
+  .ab-hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 8, 5, 0.88) 0%,
+      rgba(10, 8, 5, 0.75) 100%
+    );
+  }
+
+  .ab-hero-desc {
+    max-width: 100%;
+  }
+
+  .ab-hero-mini {
+    max-width: 100%;
+  }
+
+  .ab-chef {
+    padding: 4rem 0 3rem;
+  }
+
+  .ab-chef-info {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .ab-vv {
+    padding: 4rem 1.25rem;
+  }
+
+  .ab-vv-inner {
+    padding: 0;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ab-hero-title {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+  }
+
+  .ab-hero-content {
+    padding-top: 6.5rem;
+  }
+
+  .ab-chef-photo-col {
+    min-height: 260px;
+  }
+
+  .ab-section-title {
+    font-size: 1.45rem;
+  }
+
+  .ab-chef-name {
+    font-size: 1.6rem;
+  }
+}
